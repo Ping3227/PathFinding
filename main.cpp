@@ -23,10 +23,13 @@ TestResult runTests(int n, int m, int k) {
         Grid grid(n);
         grid.generateObstacle(m);
         PathFinding pathFinding(grid);
-
+        // auto start  = std::chrono::high_resolution_clock::now();
         Result dpResult = pathFinding.DP();
+        // auto end1  = std::chrono::high_resolution_clock::now();
         Result recResult = pathFinding.recursive();
-
+        // auto end2  = std::chrono::high_resolution_clock::now();
+        // std::cout<< "DP: " << std::chrono::duration_cast<std::chrono::milliseconds>(end1 - start).count() << " ms\n";
+        // std::cout<< "Rec: " << std::chrono::duration_cast<std::chrono::milliseconds>(end2 - end1).count() << " ms\n";
         if (dpResult.validPaths > 0) {
             dpValidPaths.push_back(dpResult.validPaths);
             dpOptimalPaths.push_back(dpResult.optimalPaths);
@@ -74,7 +77,7 @@ int main() {
     std::vector<TestResult> results;
 
     for (int n = n_start; n <= n_end; ++n) {
-        for (int m = 0; m <= n*n; ++m) {
+        for (int m = 0; m <= 0; ++m) {
             results.push_back(runTests(n, m, k));
         }
         std::cout << "Completed n = " << n << "/" << n_end << "\n";
