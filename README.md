@@ -11,7 +11,7 @@
 
 #### Recursive Approach
 - `recursive(int x, int y, int turns, bool fromLeft)`: Recursively explores paths, updating turn counts and optimal paths.
-- **Complexity**: Time - $O(2^n)$ (with no obstacles), Space - O(n) (stack size).
+- **Complexity**: Time - $O(2^n)$ (with no obstacles by formula $\frac{2n!}{n!n!}$), Space - O(n) (stack size).
 
 #### Dynamic Programming (DP) Approach
 - `DP()`: Records data for each point, updating paths and turns from top and left.
