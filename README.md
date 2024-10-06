@@ -27,3 +27,20 @@
   - Valid paths (DP)
   - Optimal paths (recursive)
 ### results 
+#### Heatmap of path numbers along n and P
+- **Valid Path**:  
+  - Recursive
+    ![](images/Recursive_valid.png)
+  - DP
+    ![](images/DP_Valid.png)
+- **Optimal Path**:  
+  - Recursive
+  ![](images/Recursive_Opt.png)
+  - DP
+    ![](images/DP_Opt.png)
+#### running time comparison
+- n=10->15  recursive time grow exponentially
+- n=1000 DP have a better performance than recursive in n =15
+![](images/10_time.png)
+![](images/15_time.png)
+![](images/1000_time.png)
