@@ -11,18 +11,19 @@
 
 #### Recursive Approach
 - `recursive(int x, int y, int turns, bool fromLeft)`: Recursively explores paths, updating turn counts and optimal paths.
-- **Complexity**: Time - O(2^n) (with no obstacles), Space - O(n) (stack size).
+- **Complexity**: Time - $O(2^n)$ (with no obstacles), Space - O(n) (stack size).
 
 #### Dynamic Programming (DP) Approach
 - `DP()`: Records data for each point, updating paths and turns from top and left.
-- **Complexity**: Time - O(n^2), Space - O(n^2) (table size).
+- **Complexity**: Time - $O(n^2)$, Space - $O(n^2)$ (table size).
 
 ### Main Program
 **File:** `main.cpp`
-- Takes input n1 (start) and n2 (end), calculates path counts from density 0 to 1, and repeats k times to average results.
+- Takes input n1 (start) and n2 (end), calculates path counts from density(probability) 0 to 1, and repeats k times to average results.
 - Outputs results to a CSV file.
-- Uses `plotPath` to generate terrain maps showing:
+- Uses `plotPath_log` or `plotPath`to generate terrain maps showing:
   - Valid paths (recursive)
   - Optimal paths (DP)
   - Valid paths (DP)
   - Optimal paths (recursive)
+### results 

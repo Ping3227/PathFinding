@@ -77,7 +77,7 @@ int main() {
     std::vector<TestResult> results;
 
     for (int n = n_start; n <= n_end; ++n) {
-        for (int m = 0; m <= 0; ++m) {
+        for (int m = 0; m <= n*n; ++m) {
             results.push_back(runTests(n, m, k));
         }
         std::cout << "Completed n = " << n << "/" << n_end << "\n";
