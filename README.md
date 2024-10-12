@@ -21,7 +21,17 @@
 #### Dynamic Programming (DP) Approach
 
 - `DP()`: Records data for each point, updating paths and turns from top and left.
--  optimal structure DP[x][y].fromleft =min_{turn}\{DP[x-1][y].\}
+- optimal sturcture:
+
+$$
+DP[x][y].\{turn, paths\}_{fromleft} =
+  \begin{cases}
+  DP[x-1][y].turn_{fromleft}\space ,\space DP[x-1][y].paths_{fromleft} & \text{if } DP[x-1][y].turn_{fromtop} + 1 > DP[x-1][y].turn_{fromleft} \\
+  DP[x-1][y].turn_{fromleft}\space ,\space DP[x-1][y].paths_{fromleft} + DP[x-1][y].paths_{fromtop} & \text{if } DP[x-1][y].turn_{fromtop} + 1 = DP[x-1][y].turn_{fromleft} \\
+  DP[x-1][y].turn_{fromtop} + 1\space ,\space DP[x-1][y].paths_{fromtop} & \text{if } DP[x-1][y].turn_{fromtop} + 1 < DP[x-1][y].turn_{fromleft}
+  \end{cases}
+$$
+
 - **Complexity**: Time - $O(n^2)$, Space - $O(n^2)$ (table size).
 
 ### Main Program
@@ -55,12 +65,7 @@
 
 - n=10->15  recursive time grow exponentially
 - n=1000 DP have a better performance than recursive in n =15
-<<<<<<< Updated upstream
+
 ![](images/10_time.png)
 ![](images/15_time.png)
 ![](images/1000_time.png)
-=======
-  ![](images/10_time.png)
-  ![](images/15_time.png)
-  ![](images/1000_time.png)
->>>>>>> Stashed changes
