@@ -15,6 +15,7 @@
 
 #### Dynamic Programming (DP) Approach
 - `DP()`: Records data for each point, updating paths and turns from top and left.
+-  optimal structure DP[x][y].fromleft =min_{turn}\{DP[x-1][y].\}
 - **Complexity**: Time - $O(n^2)$, Space - $O(n^2)$ (table size).
 
 ### Main Program
